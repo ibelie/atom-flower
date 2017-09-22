@@ -1,0 +1,15 @@
+{
+  "name": "atom-flower",
+  "version": "0.0.0",
+  "description": "Actively maintained Flower editor in Atom.",
+  "repository": "https://github.com/ibelie/atom-flower",
+  "license": "MIT",
+  "keywords": [
+    "Flower"
+  ],
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "main": "./lib/atom-flower",
+  "dependencies": {}
+}

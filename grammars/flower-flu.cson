@@ -1,0 +1,10 @@
+'scopeName': 'source.flower.flu'
+'name': 'Flower Unit'
+'fileTypes': [
+  'flu'
+]
+'patterns': [
+  {
+    'include': 'source.python'
+  }
+]

@@ -1,4 +1,0 @@
-'.source.flower.flw':
-  'max':
-    'prefix': 'max'
-    'body': 'max(${0:value}, ...)'

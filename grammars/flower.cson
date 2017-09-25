@@ -1,0 +1,10 @@
+scopeName: 'source.flower'
+name: 'Flower'
+fileTypes: [
+	'flw'
+]
+patterns: [
+	{
+		include: 'source.coffee'
+	}
+]

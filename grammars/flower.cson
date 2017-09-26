@@ -5,6 +5,223 @@ fileTypes: [
 ]
 patterns: [
 	{
-		include: 'source.coffee'
+		match: '(`)(.*)(`)'
+		name: 'string.quoted.formula.flower'
+		captures:
+			1:
+				name: 'punctuation.definition.string.begin.flower'
+			2:
+				name: 'source.formula.embedded.flower'
+				patterns: [
+					{
+						include: 'source.formula'
+					}
+				]
+			3:
+				name: 'punctuation.definition.string.end.flower'
+	}
+	{
+		include: '#line_comments'
+	}
+	{
+		match: '\\b(?i:(0x\\h*)L)'
+		name: 'constant.numeric.integer.long.hexadecimal.flower'
+	}
+	{
+		match: '\\b(?i:(0x\\h*))'
+		name: 'constant.numeric.integer.hexadecimal.flower'
+	}
+	{
+		match: '\\b(?i:(0o?[0-7]+)L)'
+		name: 'constant.numeric.integer.long.octal.flower'
+	}
+	{
+		match: '\\b(?i:(0o?[0-7]+))'
+		name: 'constant.numeric.integer.octal.flower'
+	}
+	{
+		match: '\\b(?i:(0b[01]+)L)',
+		name: 'constant.numeric.integer.long.binary.flower'
+	}
+	{
+		match: '\\b(?i:(0b[01]+))',
+		name: 'constant.numeric.integer.binary.flower'
+	}
+	{
+		match: '\\b(?i:(((\\d+(\\.(?=[^A-Za-z_])\\d*)?|(?<=[^0-9A-Za-z_])\\.\\d+)(e[\\-\\+]?\\d+)?))J)'
+		name: 'constant.numeric.complex.flower'
+	}
+	{
+		match: '\\b(?i:(\\d+\\.\\d*(e[\\-\\+]?\\d+)?))(?=[^A-Za-z_])'
+		name: 'constant.numeric.float.flower'
+	}
+	{
+		match: '(?<=[^0-9A-Za-z_])(?i:(\\.\\d+(e[\\-\\+]?\\d+)?))'
+		name: 'constant.numeric.float.flower'
+	}
+	{
+		match: '\\b(?i:(\\d+e[\\-\\+]?\\d+))'
+		name: 'constant.numeric.float.flower'
+	}
+	{
+		match: '\\b(?i:([1-9]+[0-9]*|0)L)'
+		name: 'constant.numeric.integer.long.decimal.flower'
+	}
+	{
+		match: '\\b([1-9]+[0-9]*|0)'
+		name: 'constant.numeric.integer.decimal.flower'
+	}
+	{
+		match: '~'
+		name: 'constant.language.null.flower'
+	}
+	{
+		match: '(?<!\\$)\\b[0-9]+[\\w$]*'
+		name: 'invalid.illegal.identifier.flower'
+	}
+	{
+		include: '#string'
+	}
+	{
+		include: '#object'
 	}
 ]
+repository:
+	separator_arguments:
+		match: ','
+		name: 'punctuation.separator.arguments.flower'
+	constant_placeholder:
+		match: '(?i:(%(\\([a-z_]+\\))?#?0?\\-?[ ]?\\+?([0-9]*|\\*)(\\.([0-9]*|\\*))?([hL][a-z]|[a-z%]))|(\\{([!\\[\\].:\\w ]+)?\\}))'
+		name: 'constant.other.placeholder.flower'
+	line_comments:
+		begin: '(^[ \\t]+)?(?=#)'
+		beginCaptures:
+			1:
+				name: 'punctuation.whitespace.comment.leading.flower'
+		end: '(?!\\G)'
+		patterns: [
+			{
+				begin: '#'
+				beginCaptures:
+					0:
+						name: 'punctuation.definition.comment.flower'
+				end: '\\n'
+				name: 'comment.line.number-sign.flower'
+			}
+		]
+	object:
+		begin: '(?=[A-Za-z_][A-Za-z0-9_]*(?:\\.[A-Za-z_][A-Za-z_0-9]*)*\\s*\\()'
+		end: '(\\))'
+		endCaptures:
+			1:
+				name: 'punctuation.definition.arguments.end.flower'
+		name: 'meta.function-call.flower'
+		patterns: [
+			{
+				begin: '(?=[A-Za-z_][A-Za-z0-9_]*(?:\\.[A-Za-z_][A-Za-z0-9_]*)*\\s*\\()'
+				end: '(?=\\s*\\()'
+				patterns: [
+					{
+						include: '#namespace'
+					}
+				]
+			}
+			{
+				begin: '(\\()'
+				beginCaptures:
+					1:
+						name: 'punctuation.definition.arguments.begin.flower'
+				contentName: 'meta.function-call.arguments.flower'
+				end: '(?=\\))'
+				patterns: [
+					{
+						include: '#separator_arguments'
+					}
+					{
+						include: '$self'
+					}
+				]
+			}
+		]
+	namespace:
+		begin: '(?=[A-Za-z_][A-Za-z0-9_]*(?:\\.[A-Za-z_][A-Za-z0-9_]*)*)'
+		end: '(?![A-Za-z0-9_\\.])'
+		name: 'meta.property.flower'
+		patterns: [
+			{
+				begin: '(\\.)(?=[A-Za-z_][A-Za-z0-9_]*)'
+				end: '(?![A-Za-z0-9_])'
+				patterns: [
+					{
+						match: '[A-Za-z_][A-Za-z0-9_]*'
+						name: 'entity.other.attribute-name.flower'
+					}
+				]
+			}
+			{
+				begin: '(?<!\\.)(?=[A-Za-z_][A-Za-z0-9_]*)'
+				end: '(?![A-Za-z0-9_])'
+				patterns: [
+					{
+						match: '[A-Za-z_][A-Za-z0-9_]*'
+						name: 'variable.language.flower'
+					}
+				]
+			}
+		]
+	escaped_char:
+		captures:
+			1:
+				name: 'constant.character.escape.hex.flower'
+			2:
+				name: 'constant.character.escape.octal.flower'
+			3:
+				name: 'constant.character.escape.newline.flower'
+			4:
+				name: 'constant.character.escape.backlash.flower'
+			5:
+				name: 'constant.character.escape.double-quote.flower'
+			6:
+				name: 'constant.character.escape.single-quote.flower'
+			7:
+				name: 'constant.character.escape.bell.flower'
+			8:
+				name: 'constant.character.escape.backspace.flower'
+			9:
+				name: 'constant.character.escape.formfeed.flower'
+			10:
+				name: 'constant.character.escape.linefeed.flower'
+			11:
+				name: 'constant.character.escape.return.flower'
+			12:
+				name: 'constant.character.escape.tab.flower'
+			13:
+				name: 'constant.character.escape.vertical-tab.flower'
+		match: '(\\\\x[0-9A-F]{2})|(\\\\[0-7]{3})|(\\\\\\n)|(\\\\\\\\)|(\\\\\\")|(\\\\\')|(\\\\a)|(\\\\b)|(\\\\f)|(\\\\n)|(\\\\r)|(\\\\t)|(\\\\v)'
+	string:
+		patterns: [
+			{
+				begin: '(\')'
+				beginCaptures:
+					1:
+						name: 'punctuation.definition.string.begin.flower'
+				comment: 'single quoted string'
+				end: '((?<=\')(\')|\')|(\\n)'
+				endCaptures:
+					1:
+						name: 'punctuation.definition.string.end.flower'
+					2:
+						name: 'meta.empty-string.single.flower'
+					3:
+						name: 'invalid.illegal.unclosed-string.flower'
+				name: 'string.quoted.single.single-line.flower'
+				patterns: [
+					{
+						include: '#constant_placeholder'
+					}
+					{
+						include: '#escaped_char'
+					}
+				]
+			}
+		]

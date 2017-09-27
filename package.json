@@ -12,6 +12,7 @@
 	},
 	"main": "./lib/atom-flower",
 	"dependencies": {
+		"atom-utils": ">=0.9.2",
 		"language-formula": "^0.3.0"
 	}
 }

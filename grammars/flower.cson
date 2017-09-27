@@ -40,11 +40,11 @@ patterns: [
 		name: 'constant.numeric.integer.octal.flower'
 	}
 	{
-		match: '\\b(?i:(0b[01]+)L)',
+		match: '\\b(?i:(0b[01]+)L)'
 		name: 'constant.numeric.integer.long.binary.flower'
 	}
 	{
-		match: '\\b(?i:(0b[01]+))',
+		match: '\\b(?i:(0b[01]+))'
 		name: 'constant.numeric.integer.binary.flower'
 	}
 	{
@@ -72,8 +72,16 @@ patterns: [
 		name: 'constant.numeric.integer.decimal.flower'
 	}
 	{
+		match: '\\b(true|false)\\b'
+		name: 'constant.language.flower'
+	}
+	{
 		match: '~'
 		name: 'constant.language.null.flower'
+	}
+	{
+		match: '-'
+		name: 'punctuation.separator.list.flower'
 	}
 	{
 		match: '(?<!\\$)\\b[0-9]+[\\w$]*'
@@ -84,6 +92,14 @@ patterns: [
 	}
 	{
 		include: '#object'
+	}
+	{
+		match: '([A-Za-z0-9_]+)(:)'
+		captures:
+			1:
+				name: 'variable.other.property.flower'
+			2:
+				name: 'punctuation.separator.valuepair.property.flower'
 	}
 	{
 		match: '([A-Za-z_][A-Za-z0-9_]*)(\\.)([A-Za-z_][A-Za-z0-9_]*)\\s*(?!\\()'

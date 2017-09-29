@@ -19,8 +19,14 @@ atom-text-editor, html {
 		flex-grow: 0;
 		flex-shrink: 0;
 
-		:hover {
-			cursor: w-resize;
+		.resize-left {
+			top: 0px;
+			left: 0px;
+			width: 4px;
+			height: 100%;
+			position: absolute;
+			z-index: 11;
+			cursor: col-resize;
 		}
 	}
 }

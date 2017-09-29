@@ -1,12 +1,15 @@
+atom-text-editor[with-flower-gantt] {
+	display: flex;
+}
+
 atom-text-editor, html {
 	atom-flower-gantt {
 		display: block;
 		overflow: hidden;
-		position: absolute;
+		position: relative;
+		align-self: flex-end;
 
 		height: 50%;
-		order: 1;
-		width: 100%;
-		flex: 0 0 100%;
+		order: 5;
 	}
 }

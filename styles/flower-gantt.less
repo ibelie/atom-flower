@@ -1,5 +1,12 @@
 atom-text-editor[with-flower-gantt] {
 	display: flex;
+	flex-wrap: wrap;
+}
+
+atom-text-editor[with-minimap] > div,
+atom-text-editor[with-minimap].editor > div {
+	order: 2;
+	flex: 1 1 50%;
 }
 
 atom-text-editor, html {
@@ -10,6 +17,9 @@ atom-text-editor, html {
 		align-self: flex-end;
 
 		height: 50%;
-		order: 5;
+		width: 100%;
+		order: 0;
+		flex-grow: 0;
+		flex-shrink: 0;
 	}
 }

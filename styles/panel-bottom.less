@@ -1,3 +1,5 @@
+@import "ui-variables";
+
 atom-panel, html {
 	atom-panel-flower-bottom {
 		position: relative;
@@ -13,6 +15,104 @@ atom-panel, html {
 			height: 4px;
 			z-index: 3;
 			cursor: row-resize;
+		}
+
+		.icon {
+			display: inline-block;
+			line-height: inherit;
+			margin-right: 0.2em;
+			vertical-align: middle;
+			font-size: 16px;
+			fill: currentColor;
+
+			svg {
+				width: auto;
+				height: 1em;
+				vertical-align: text-top;
+			}
+		}
+
+		.panel-head {
+			flex: 0 0 auto;
+			display: flex;
+			align-items: center;
+			padding: 0;
+			cursor: default;
+			background-color: @tool-panel-background-color;
+		}
+
+		.panel-group {
+			padding: @component-padding/2 @component-padding;
+		}
+
+		.panel-nav {
+			flex: 1 1 0;
+			padding: 0;
+			margin-bottom: -1px; // cover border
+			border-left: 1px solid @base-border-color;
+			border-right: 1px solid @base-border-color;
+			white-space: nowrap;
+			overflow-x: auto;
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
+		}
+
+		.panel-nav-item {
+			display: inline-block;
+			color: @text-color-subtle;
+			border: 1px solid transparent;
+			border-width: 0 1px;
+			line-height: 1;
+			text-align: center;
+			padding: @component-padding/1.5 @component-padding;
+
+			&:hover {
+				color: @text-color-highlight;
+			}
+
+			&.is-selected,
+			&:active {
+				color: @text-color-selected;
+				border-color: @panel-heading-border-color;
+				background-color: @base-background-color;
+			}
+		}
+
+		.panel-icon-button {
+			color: inherit;
+			padding: 0;
+			border: none;
+			background-color: transparent;
+			cursor: default;
+
+			& + .panel-icon-button {
+				margin-left: @component-padding;
+			}
+
+			&:hover {
+				color: @text-color-highlight;
+			}
+
+			&:active {
+				color: @text-color-subtle;
+			}
+
+			&:before {
+				margin-right: 0;
+			}
+		}
+
+		.panel-body {
+			position: relative;
+			overflow: auto;
+			display: flex;
+			flex: 1;
+			min-height: 0;
+			background-color: @base-background-color;
+			-webkit-user-select: text;
+			font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 		}
 	}
 }

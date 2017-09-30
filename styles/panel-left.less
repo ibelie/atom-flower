@@ -1,0 +1,124 @@
+@import "ui-variables";
+
+atom-panel, html {
+	atom-panel-flower-left {
+		position: relative;
+		display: flex;
+		height: 100%;
+		flex-direction: row;
+		-webkit-user-select: none;
+
+		.resize-handle {
+			position: absolute;
+			left: 0;
+			right: auto;
+			bottom: 0;
+			top: 0;
+			width: 4px;
+			height: initial;
+			z-index: 3;
+			cursor: col-resize;
+		}
+
+		.icon {
+			display: inline-block;
+			line-height: inherit;
+			margin-right: 0;
+			vertical-align: middle;
+			font-size: 16px;
+			fill: currentColor;
+
+			svg {
+				width: auto;
+				height: 1em;
+				vertical-align: text-top;
+			}
+		}
+
+		.panel-head {
+			border: none;
+			text-align: center;
+			flex-direction: column;
+			flex: 0 0 auto;
+			display: flex;
+			align-items: center;
+			padding: 0;
+			cursor: default;
+			background-color: @tool-panel-background-color;
+		}
+
+		.panel-group {
+			padding: 0;
+		}
+
+		.panel-nav {
+			flex: 1 1 0;
+			padding: 0;
+			margin-bottom: -1px; // cover border
+			border: none;
+			white-space: nowrap;
+			overflow-x: auto;
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
+		}
+
+		.panel-nav-item {
+			display: block;
+			color: @text-color-subtle;
+			border: 1px solid transparent;
+			border-width: 1px 0;
+			line-height: 1;
+			text-align: center;
+			padding: @component-padding/1.5 @component-padding;
+
+			&:hover {
+				color: @text-color-highlight;
+			}
+
+			&.is-selected,
+			&:active {
+				color: @text-color-selected;
+				border-color: @panel-heading-border-color;
+				background-color: @base-background-color;
+			}
+		}
+
+		.panel-icon-button {
+			display: block;
+			color: inherit;
+			padding: 0;
+			border: none;
+			background-color: transparent;
+			cursor: default;
+
+			& + .panel-icon-button {
+				margin: @component-padding 0;
+			}
+
+			&:hover {
+				color: @text-color-highlight;
+			}
+
+			&:active {
+				color: @text-color-subtle;
+			}
+
+			&:before {
+				margin-right: 0;
+			}
+		}
+
+		.panel-body {
+			position: relative;
+			overflow: auto;
+			display: flex;
+			flex: 1;
+			min-height: 0;
+			background-color: @base-background-color;
+			-webkit-user-select: text;
+			font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+		}
+	}
+}

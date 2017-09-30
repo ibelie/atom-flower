@@ -1,32 +1,4 @@
-atom-text-editor[with-flower-tree] {
-	display: flex;
-}
-
-atom-text-editor[with-minimap] > div,
-atom-text-editor[with-minimap].editor > div {
-	order: 2;
-}
-
 atom-text-editor, html {
 	atom-flower-tree {
-		display: block;
-		overflow: hidden;
-		position: relative;
-
-		order: 4;
-		height: 35%;
-		width: 100%;
-		flex-grow: 0;
-		flex-shrink: 0;
-
-		.resize-left {
-			top: 0px;
-			left: 0px;
-			width: 4px;
-			height: 100%;
-			position: absolute;
-			z-index: 11;
-			cursor: col-resize;
-		}
 	}
 }

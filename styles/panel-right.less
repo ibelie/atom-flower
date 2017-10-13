@@ -110,12 +110,18 @@ atom-panel, html {
 			}
 		}
 
+		.panel-tool {
+			&::-webkit-scrollbar {
+				display: none;
+			}
+		}
+
 		.panel-body {
 			position: relative;
 			overflow: auto;
 			display: flex;
 			flex: 1;
-			min-height: 0;
+			min-width: 0;
 			background-color: @base-background-color;
 			-webkit-user-select: text;
 			font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;

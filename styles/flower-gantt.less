@@ -5,12 +5,15 @@ atom-flower-gantt {
 	white-space: nowrap;
 
 	.gantt_grid {
-		border-right: 1px solid #cac8bd;
-	}
+		overflow: hidden;
+		display: inline-block;
+		vertical-align: top;
+		border-right: 1px solid auto;
 
-	.gantt_grid_scale .gantt_grid_head_cell {
-		border-top: none!important;
-		border-right: none!important;
+		div {
+			-ms-touch-action: none;
+			-webkit-tap-highlight-color: transparent;
+		}
 	}
 
 	.gantt_grid_data .gantt_cell {
@@ -18,6 +21,8 @@ atom-flower-gantt {
 	}
 
 	.gantt_grid_head_cell {
+		border-top: none!important;
+		border-right: none!important;
 		display: inline-block;
 		vertical-align: top;
 		border-right: 1px solid #cac8bd;
@@ -31,7 +36,6 @@ atom-flower-gantt {
 		overflow: hidden;
 	}
 
-	.gantt_grid,
 	.gantt_task {
 		overflow-x: hidden;
 		overflow-y: hidden;
@@ -57,16 +61,6 @@ atom-flower-gantt {
 		background-color: #ffebbc!important;
 	}
 
-	.gantt_cell,
-	.gantt_grid_head_cell,
-	.gantt_row,
-	.gantt_scale_cell,
-	.gantt_task_cell,
-	.gantt_task_row {
-		box-sizing: border-box;
-		-moz-box-sizing: border-box;
-	}
-
 	.gantt_grid_data .gantt_last_cell,
 	.gantt_grid_scale .gantt_last_cell,
 	.gantt_task_bg .gantt_last_cell,
@@ -74,8 +68,7 @@ atom-flower-gantt {
 		border-right-width: 0;
 	}
 
-	.gantt_data_area div,
-	.gantt_grid div {
+	.gantt_data_area div {
 		-ms-touch-action: none;
 		-webkit-tap-highlight-color: transparent;
 	}

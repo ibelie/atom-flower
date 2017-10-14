@@ -15,15 +15,13 @@ atom-flower-gantt {
 		}
 
 		.gantt-tree-scale {
-			color: #3f3f3f;
-			font-size: 8pt;
 			background-color: @tool-panel-background-color;
+			padding-left: 15px;
 
-			.gantt-tree-scale-cell {
-				border-top: none!important;
+			.gantt-tree-scale-name {
 				display: inline-block;
 				vertical-align: top;
-				text-align: center;
+				text-align: left;
 				position: relative;
 				cursor: default;
 				height: 100%;
@@ -170,11 +168,6 @@ atom-flower-gantt {
 .gantt_scale_line {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	border-top: 1px solid #cac8bd;
-}
-
-.gantt_scale_line:first-child {
-	border-top: none;
 }
 
 .gantt_scale_line {

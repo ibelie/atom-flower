@@ -21,7 +21,7 @@ atom-flower-gantt {
 			border-bottom: 1px solid #cac8bd;
 			background-color: #f4f2ea;
 
-			.gantt-tree-head-cell {
+			.gantt-tree-scale-cell {
 				border-top: none!important;
 				border-right: none!important;
 				display: inline-block;
@@ -122,6 +122,20 @@ atom-flower-gantt {
 		}
 	}
 
+	.gantt-data-area {
+		position: relative;
+		overflow-x: hidden;
+		overflow-y: hidden;
+		-moz-user-select: -moz-none;
+		-webkit-user-select: none;
+		-user-select: none;
+
+		div {
+			-ms-touch-action: none;
+			-webkit-tap-highlight-color: transparent;
+		}
+	}
+
 	.gantt_task {
 		overflow-x: hidden;
 		overflow-y: hidden;
@@ -144,12 +158,6 @@ atom-flower-gantt {
 		border-bottom: 1px solid #cac8bd;
 		background-color: #f4f2ea;
 	}
-
-	.gantt_data_area div {
-		-ms-touch-action: none;
-		-webkit-tap-highlight-color: transparent;
-	}
-
 }
 
 .gantt_task_line .gantt_task_progress_drag {
@@ -161,11 +169,6 @@ atom-flower-gantt {
 
 .gantt_task .gantt_task_scale .gantt_scale_cell {
 	border-right: 1px solid #cac8bd;
-}
-
-.gantt_data_area .gantt_cal_qi_content {
-	background: #fcfaf3;
-	border-bottom: 1px solid #cac8bd;
 }
 
 .gantt_task_scroll {
@@ -238,15 +241,6 @@ atom-flower-gantt {
 .gantt_hor_scroll > div {
 	width: 5000px;
 	height: 1px;
-}
-
-.gantt_data_area {
-	position: relative;
-	overflow-x: hidden;
-	overflow-y: hidden;
-	-moz-user-select: -moz-none;
-	-webkit-user-select: none;
-	-user-select: none;
 }
 
 .gantt_links_area {

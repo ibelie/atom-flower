@@ -14,26 +14,42 @@ atom-flower-gantt {
 			-ms-touch-action: none;
 			-webkit-tap-highlight-color: transparent;
 		}
-	}
 
-	.gantt_grid_data .gantt_cell {
-		border-right: none;
-	}
+		.gantt_grid_scale {
+			color: #3f3f3f;
+			font-size: 8pt;
+			border-bottom: 1px solid #cac8bd;
+			background-color: #f4f2ea;
 
-	.gantt_grid_head_cell {
-		border-top: none!important;
-		border-right: none!important;
-		display: inline-block;
-		vertical-align: top;
-		border-right: 1px solid #cac8bd;
-		text-align: center;
-		position: relative;
-		cursor: default;
-		height: 100%;
-		-moz-user-select: -moz-none;
-		-webkit-user-select: none;
-		-user-select: none;
-		overflow: hidden;
+			.gantt_grid_head_cell {
+				border-top: none!important;
+				border-right: none!important;
+				display: inline-block;
+				vertical-align: top;
+				border-right: 1px solid #cac8bd;
+				text-align: center;
+				position: relative;
+				cursor: default;
+				height: 100%;
+				-moz-user-select: -moz-none;
+				-webkit-user-select: none;
+				-user-select: none;
+				overflow: hidden;
+			}
+		}
+
+		.gantt_grid_data {
+			width: 100%;
+			overflow: hidden;
+
+			.gantt_row.odd:hover, .gantt_row:hover {
+				background-color: #ffebbc!important;
+			}
+
+			.gantt_cell {
+				border-right: none;
+			}
+		}
 	}
 
 	.gantt_task {
@@ -43,29 +59,11 @@ atom-flower-gantt {
 		vertical-align: top;
 	}
 
-	.gantt_grid_scale,
 	.gantt_task_scale {
 		color: #3f3f3f;
 		font-size: 8pt;
 		border-bottom: 1px solid #cac8bd;
 		background-color: #f4f2ea;
-	}
-
-	.gantt_grid_data {
-		width: 100%;
-		overflow: hidden;
-	}
-
-	.gantt_grid_data .gantt_row.odd:hover,
-	.gantt_grid_data .gantt_row:hover {
-		background-color: #ffebbc!important;
-	}
-
-	.gantt_grid_data .gantt_last_cell,
-	.gantt_grid_scale .gantt_last_cell,
-	.gantt_task_bg .gantt_last_cell,
-	.gantt_task_scale .gantt_last_cell {
-		border-right-width: 0;
 	}
 
 	.gantt_data_area div {

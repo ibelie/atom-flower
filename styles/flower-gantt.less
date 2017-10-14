@@ -8,7 +8,6 @@ atom-flower-gantt {
 		overflow: hidden;
 		display: inline-block;
 		vertical-align: top;
-		border-right: 1px solid auto;
 
 		div {
 			-ms-touch-action: none;
@@ -18,15 +17,12 @@ atom-flower-gantt {
 		.gantt-tree-scale {
 			color: #3f3f3f;
 			font-size: 8pt;
-			border-bottom: 1px solid #cac8bd;
-			background-color: #f4f2ea;
+			background-color: @tool-panel-background-color;
 
 			.gantt-tree-scale-cell {
 				border-top: none!important;
-				border-right: none!important;
 				display: inline-block;
 				vertical-align: top;
-				border-right: 1px solid #cac8bd;
 				text-align: center;
 				position: relative;
 				cursor: default;
@@ -44,25 +40,23 @@ atom-flower-gantt {
 
 			.gantt-tree-row {
 				position: relative;
-				border-bottom: 1px solid #eae9e5;
-				background-color: #fff;
+				background-color: @base-background-color;
 				-webkit-user-select: none;
 				-moz-user-select: none;
 				-moz-user-select: -moz-none;
 
 				&.odd:hover, &:hover {
-					background-color: #ffebbc!important;
+					background-color: @background-color-selected;
 				}
 
 				&.odd {
-					background-color: #fff;
+					background-color: @background-color-highlight;
 				}
 			}
 
 			.gantt-tree-cell {
 				display: inline-block;
 				vertical-align: top;
-				border-right: 1px solid auto;
 				padding-left: 6px;
 				padding-right: 6px;
 				height: 100%;
@@ -144,7 +138,6 @@ atom-flower-gantt {
 	}
 
 	.gantt_task_row {
-		border-bottom: 1px solid #eae9e5;
 		background-color: #fff;
 	}
 
@@ -155,7 +148,6 @@ atom-flower-gantt {
 	.gantt_task_scale {
 		color: #3f3f3f;
 		font-size: 8pt;
-		border-bottom: 1px solid #cac8bd;
 		background-color: #f4f2ea;
 	}
 }
@@ -165,10 +157,6 @@ atom-flower-gantt {
 	height: 16px;
 	margin-left: -8px;
 	width: 16px;
-}
-
-.gantt_task .gantt_task_scale .gantt_scale_cell {
-	border-right: 1px solid #cac8bd;
 }
 
 .gantt_task_scroll {
@@ -201,7 +189,6 @@ atom-flower-gantt {
 	display: inline-block;
 	white-space: nowrap;
 	overflow: hidden;
-	border-right: 1px solid #cac8bd;
 	text-align: center;
 	height: 100%;
 }
@@ -209,7 +196,6 @@ atom-flower-gantt {
 .gantt_task_cell {
 	display: inline-block;
 	height: 100%;
-	border-right: 1px solid #eae9e5;
 }
 
 .gantt_ver_scroll {

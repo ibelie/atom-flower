@@ -60,7 +60,6 @@ atom-flower-gantt {
 				height: 100%;
 				overflow: hidden;
 				white-space: nowrap;
-				font-size: 8pt;
 			}
 		}
 
@@ -136,17 +135,18 @@ atom-flower-gantt {
 	}
 
 	.gantt_task_row {
-		background-color: #fff;
+		border-bottom: 1px solid @base-border-color;
+		background-color: @base-background-color;
 	}
 
 	.gantt_task_row.odd {
-		background-color: #fff;
+		background-color: @background-color-highlight;
 	}
 
 	.gantt_task_scale {
-		color: #3f3f3f;
-		font-size: 8pt;
-		background-color: #f4f2ea;
+		background-color: @tab-bar-background-color;
+		border-top: 1px solid @tab-bar-border-color;
+		border-bottom: 1px solid @tab-bar-border-color;
 	}
 }
 
@@ -188,7 +188,7 @@ atom-flower-gantt {
 }
 
 .gantt_task_cell {
-	border-right: 1px solid @tab-bar-border-color;
+	border-right: 1px solid @base-border-color;
 	display: inline-block;
 	height: 100%;
 }
@@ -238,8 +238,7 @@ atom-flower-gantt {
 }
 
 .gantt_task_content {
-	font-size: 11px;
-	color: #3f3f3f;
+	color: black;
 	width: 100%;
 	top: 0;
 	position: absolute;

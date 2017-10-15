@@ -113,6 +113,34 @@ atom-flower-gantt {
 		}
 	}
 
+	.gantt-chart {
+		position: relative;
+		overflow: hidden;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.gantt-scale {
+		background-color: @tab-bar-background-color;
+		border-top: 1px solid @tab-bar-border-color;
+		border-bottom: 1px solid @tab-bar-border-color;
+
+		.gantt-scale-row {
+			clear: both;
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+		}
+
+		.gantt-scale-cell {
+			border-right: 1px solid @tab-bar-border-color;
+			display: inline-block;
+			white-space: nowrap;
+			overflow: hidden;
+			text-align: center;
+			height: 100%;
+		}
+	}
+
 	.gantt-data-area {
 		position: relative;
 		overflow-x: hidden;
@@ -121,47 +149,29 @@ atom-flower-gantt {
 		-webkit-user-select: none;
 		-user-select: none;
 
+		.gantt-data-bg {
+			overflow: hidden;
+
+			.gantt-data-row {
+				border-bottom: 1px solid @base-border-color;
+				background-color: @base-background-color;
+
+				&.odd {
+					background-color: @background-color-highlight;
+				}
+			}
+
+			.gantt-data-cell {
+				border-right: 1px solid @base-border-color;
+				display: inline-block;
+				height: 100%;
+			}
+		}
+
 		div {
 			-ms-touch-action: none;
 			-webkit-tap-highlight-color: transparent;
 		}
-	}
-
-	.gantt-chart {
-		position: relative;
-		overflow: hidden;
-		display: inline-block;
-		vertical-align: top;
-
-		.gantt-scale {
-			background-color: @tab-bar-background-color;
-			border-top: 1px solid @tab-bar-border-color;
-			border-bottom: 1px solid @tab-bar-border-color;
-
-			.gantt-scale-row {
-				clear: both;
-				box-sizing: border-box;
-				-moz-box-sizing: border-box;
-			}
-
-			.gantt-scale-cell {
-				border-right: 1px solid @tab-bar-border-color;
-				display: inline-block;
-				white-space: nowrap;
-				overflow: hidden;
-				text-align: center;
-				height: 100%;
-			}
-		}
-	}
-
-	.gantt_task_row {
-		border-bottom: 1px solid @base-border-color;
-		background-color: @base-background-color;
-	}
-
-	.gantt_task_row.odd {
-		background-color: @background-color-highlight;
 	}
 }
 
@@ -174,16 +184,6 @@ atom-flower-gantt {
 
 .gantt_task_scroll {
 	overflow-x: scroll;
-}
-
-.gantt_task_bg {
-	overflow: hidden;
-}
-
-.gantt_task_cell {
-	border-right: 1px solid @base-border-color;
-	display: inline-block;
-	height: 100%;
 }
 
 .gantt_ver_scroll {

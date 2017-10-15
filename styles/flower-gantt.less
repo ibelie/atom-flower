@@ -13,54 +13,54 @@ atom-flower-gantt {
 			-ms-touch-action: none;
 			-webkit-tap-highlight-color: transparent;
 		}
+	}
 
-		.gantt-tree-scale {
-			background-color: @input-background-color;
-			padding-left: 15px;
+	.gantt-tree-scale {
+		background-color: @input-background-color;
+		padding-left: 15px;
 
-			.gantt-tree-scale-name {
-				display: inline-block;
-				vertical-align: top;
-				text-align: left;
-				position: relative;
-				cursor: default;
-				height: 100%;
-				-moz-user-select: -moz-none;
-				-webkit-user-select: none;
-				-user-select: none;
-				overflow: hidden;
+		.gantt-tree-scale-name {
+			display: inline-block;
+			vertical-align: top;
+			text-align: left;
+			position: relative;
+			cursor: default;
+			height: 100%;
+			-moz-user-select: -moz-none;
+			-webkit-user-select: none;
+			-user-select: none;
+			overflow: hidden;
+		}
+	}
+
+	.gantt-tree-data {
+		width: 100%;
+		overflow: hidden;
+
+		.gantt-tree-row {
+			position: relative;
+			background-color: @base-background-color;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-moz-user-select: -moz-none;
+
+			&.odd:hover, &:hover {
+				background-color: @background-color-selected;
+			}
+
+			&.odd {
+				background-color: @background-color-highlight;
 			}
 		}
 
-		.gantt-tree-data {
-			width: 100%;
+		.gantt-tree-cell {
+			display: inline-block;
+			vertical-align: top;
+			padding-left: 6px;
+			padding-right: 6px;
+			height: 100%;
 			overflow: hidden;
-
-			.gantt-tree-row {
-				position: relative;
-				background-color: @base-background-color;
-				-webkit-user-select: none;
-				-moz-user-select: none;
-				-moz-user-select: -moz-none;
-
-				&.odd:hover, &:hover {
-					background-color: @background-color-selected;
-				}
-
-				&.odd {
-					background-color: @background-color-highlight;
-				}
-			}
-
-			.gantt-tree-cell {
-				display: inline-block;
-				vertical-align: top;
-				padding-left: 6px;
-				padding-right: 6px;
-				height: 100%;
-				overflow: hidden;
-				white-space: nowrap;
-			}
+			white-space: nowrap;
 		}
 
 		.gantt-tree-indent {
@@ -127,11 +127,32 @@ atom-flower-gantt {
 		}
 	}
 
-	.gantt_task {
-		overflow-x: hidden;
-		overflow-y: hidden;
+	.gantt-chart {
+		position: relative;
+		overflow: hidden;
 		display: inline-block;
 		vertical-align: top;
+
+		.gantt-scale {
+			background-color: @tab-bar-background-color;
+			border-top: 1px solid @tab-bar-border-color;
+			border-bottom: 1px solid @tab-bar-border-color;
+
+			.gantt-scale-row {
+				clear: both;
+				box-sizing: border-box;
+				-moz-box-sizing: border-box;
+			}
+
+			.gantt-scale-cell {
+				border-right: 1px solid @tab-bar-border-color;
+				display: inline-block;
+				white-space: nowrap;
+				overflow: hidden;
+				text-align: center;
+				height: 100%;
+			}
+		}
 	}
 
 	.gantt_task_row {
@@ -141,12 +162,6 @@ atom-flower-gantt {
 
 	.gantt_task_row.odd {
 		background-color: @background-color-highlight;
-	}
-
-	.gantt_task_scale {
-		background-color: @tab-bar-background-color;
-		border-top: 1px solid @tab-bar-border-color;
-		border-bottom: 1px solid @tab-bar-border-color;
 	}
 }
 
@@ -161,30 +176,8 @@ atom-flower-gantt {
 	overflow-x: scroll;
 }
 
-.gantt_task {
-	position: relative;
-}
-
-.gantt_scale_line {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-}
-
-.gantt_scale_line {
-	clear: both;
-}
-
 .gantt_task_bg {
 	overflow: hidden;
-}
-
-.gantt_scale_cell {
-	border-right: 1px solid @tab-bar-border-color;
-	display: inline-block;
-	white-space: nowrap;
-	overflow: hidden;
-	text-align: center;
-	height: 100%;
 }
 
 .gantt_task_cell {

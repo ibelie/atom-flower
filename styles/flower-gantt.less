@@ -151,21 +151,21 @@ atom-flower-gantt {
 
 		.gantt-data-bg {
 			overflow: hidden;
+		}
 
-			.gantt-data-row {
-				border-bottom: 1px solid @base-border-color;
-				background-color: @base-background-color;
+		.gantt-data-row {
+			border-bottom: 1px solid @base-border-color;
+			background-color: @base-background-color;
 
-				&.odd {
-					background-color: @background-color-highlight;
-				}
+			&.odd {
+				background-color: @background-color-highlight;
 			}
+		}
 
-			.gantt-data-cell {
-				border-right: 1px solid @base-border-color;
-				display: inline-block;
-				height: 100%;
-			}
+		.gantt-data-cell {
+			border-right: 1px solid @base-border-color;
+			display: inline-block;
+			height: 100%;
 		}
 
 		div {
@@ -178,28 +178,64 @@ atom-flower-gantt {
 		position: absolute;
 		left: 0;
 		top: 0;
+	}
 
-		.gantt_link_arrow,
-		.gantt_task_link .gantt_line_wrapper {
+	.gantt-link {
+		.gantt-link-wrapper {
 			position: absolute;
 			cursor: pointer;
+
+			div {
+				background-color: #ffb96d;
+			}
 		}
 
-		.gantt_line_wrapper div {
-			background-color: #ffb96d;
-		}
-
-		.gantt_task_link:hover .gantt_line_wrapper div {
+		&:hover .gantt-link-wrapper div {
 			box-shadow: 0 0 5px 0 #ffb96d;
 		}
 
-		.gantt_task_link div.gantt_link_arrow {
+		.gantt-link-arrow {
+			position: absolute;
+			cursor: pointer;
 			background-color: transparent;
 			border-style: solid;
 			width: 0;
 			height: 0;
-		}
 
+			&-right {
+				border-width: 4px 0 4px 6px;
+				border-top-color: transparent!important;
+				border-right-color: transparent!important;
+				border-bottom-color: transparent!important;
+				border-color: #ffb96d;
+				margin-top: -1px;
+			}
+
+			&-left {
+				border-width: 4px 6px 4px 0;
+				margin-top: -1px;
+				border-top-color: transparent!important;
+				border-color: #ffb96d;
+				border-bottom-color: transparent!important;
+				border-left-color: transparent!important;
+			}
+
+			&-up {
+				border-width: 0 4px 6px;
+				border-color: #ffb96d;
+				border-top-color: transparent!important;
+				border-right-color: transparent!important;
+				border-left-color: transparent!important;
+			}
+
+			&-down {
+				border-width: 4px 6px 0 4px;
+				border-color: #ffb96d;
+				border-right-color: transparent!important;
+				border-bottom-color: transparent!important;
+				border-left-color: transparent!important;
+			}
+		}
 	}
 
 }
@@ -321,48 +357,8 @@ atom-flower-gantt {
 	right: -13px;
 }
 
-.gantt_link_target .gantt_link_control div,
 .gantt_task_line:hover .gantt_link_control div {
 	display: block;
-}
-
-.gantt_link_source,
-.gantt_link_target {
-	box-shadow: 0 0 3px #a7d991;
-}
-
-.gantt_link_arrow_right {
-	border-width: 4px 0 4px 6px;
-	border-top-color: transparent!important;
-	border-right-color: transparent!important;
-	border-bottom-color: transparent!important;
-	border-color: #ffb96d;
-	margin-top: -1px;
-}
-
-.gantt_link_arrow_left {
-	border-width: 4px 6px 4px 0;
-	margin-top: -1px;
-	border-top-color: transparent!important;
-	border-color: #ffb96d;
-	border-bottom-color: transparent!important;
-	border-left-color: transparent!important;
-}
-
-.gantt_link_arrow_up {
-	border-width: 0 4px 6px;
-	border-color: #ffb96d;
-	border-top-color: transparent!important;
-	border-right-color: transparent!important;
-	border-left-color: transparent!important;
-}
-
-.gantt_link_arrow_down {
-	border-width: 4px 6px 0 4px;
-	border-color: #ffb96d;
-	border-right-color: transparent!important;
-	border-bottom-color: transparent!important;
-	border-left-color: transparent!important;
 }
 
 .gantt_task_drag,
